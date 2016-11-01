@@ -31,5 +31,5 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-BIO = "A Software Engineer based in Spain. Loving Python, Django, Web Scraping and complex data pipelines."
-PROFILE_IMAGE = "profile_pic.jpg"
+BIO = 'A Software Engineer based in Spain. Loving Python, Django, Web Scraping and complex data pipelines.'
+PROFILE_IMAGE = 'profile_pic.jpg'
