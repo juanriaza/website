@@ -10,3 +10,20 @@ Ex vim omnis facilisis, eos ad mucius accusata vituperatoribus, ut laudem copios
 Nam an reque primis qualisque, vel te pertinacia abhorreant. Noster intellegat sit ex, et eam modo wisi. Ius mazim nonumes philosophia ea, diam commodo accumsan est an. Vix percipit appellantur cu, eu volutpat efficiantur eos. Diceret impedit no his, timeam tritani sapientem in qui. Ne cum everti principes maiestatis, pertinax argumentum repudiandae vis eu.
 
 No veri atqui commune usu, nec in denique electram, graeci numquam eu nec. An usu augue reprehendunt. Cum ex wisi soleat equidem, vim ad legimus temporibus. Sed persecuti adipiscing eu, unum essent detracto mea ei. Impetus complectitur id usu, id cum veniam fabellas deserunt, ius partem dolorem iudicabit at.
+
+```python
+import scrapy
+
+class BlogSpider(scrapy.Spider):
+    name = 'blogspider'
+    start_urls = ['https://blog.scrapinghub.com']
+
+    def parse(self, response):
+        for title in response.css('h2.entry-title'):
+            yield {'title': title.css('a ::text').extract_first()}
+
+        next_page = response.css('div.prev-post > a ::attr(href)').extract_first()
+        if next_page:
+            yield scrapy.Request(response.urljoin(next_page), callback=self.parse)
+```
+
