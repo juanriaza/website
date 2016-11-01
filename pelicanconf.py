@@ -33,3 +33,6 @@ DEFAULT_PAGINATION = 10
 
 BIO = 'A Software Engineer based in Spain. Loving Python, Django, Web Scraping and complex data pipelines.'
 PROFILE_IMAGE = 'profile_pic.jpg'
+
+STATIC_PATHS = ['images', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
