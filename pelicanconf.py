@@ -36,3 +36,5 @@ PROFILE_IMAGE = 'profile_pic.jpg'
 
 STATIC_PATHS = ['images', 'extra/CNAME']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
+
+GOOGLE_ANALYTICS = 'UA-20765548-2'
